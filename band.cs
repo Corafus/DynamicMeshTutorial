@@ -19,6 +19,26 @@ public class band : MonoBehaviour
         }
 
         margin = 0.01f;
+
+        int[] midHeight = {18, 19, 5, 4, 15, 14, 20, 21};
+        for(var i = 0; i < midHeight.Length; i++){
+          vertices[midHeight[i]].y = 0.2f;
+        }
+
+        int[] bottom = {2, 3, 1, 0, 6, 7, 12, 13};
+        for(var i = 0; i < bottom.Length; i++){
+          vertices[bottom[i]].y = 0.1f;
+        }
+
+        int[] bottomRight = {20, 12, 15, 14, 12, 13, 21, 1, 0};
+        for(var i = 0; i < bottomRight.Length; i++){
+          vertices[bottomRight[i]].x = 1.6f + margin;
+        }
+
+        int[] bottomLeft = {18, 19, 5, 4, 6, 7, 3, 2};
+        for(var i = 0; i < bottomLeft.Length; i++){
+          vertices[bottomLeft[i]].x = -1.6f - margin;
+        }
     }
 
     // Update is called once per frame
