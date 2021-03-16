@@ -26,12 +26,12 @@ public class stack : MonoBehaviour
     void Update()
     {
 
-      vertices[0].y = height;
-      vertices[1].y = height;
-      vertices[2].y = height;
-      vertices[3].y = height;
-
       
+
+      int[] top = {0, 1, 2, 3, 23, 22, 18, 19, 10, 11, 6, 7};
+      for(var i = 0; i < top.Length; i++){
+        vertices[top[i]].y = height;
+      }
       stackMesh.mesh.vertices = vertices;
     }
 }
