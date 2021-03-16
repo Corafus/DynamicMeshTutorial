@@ -23,16 +23,20 @@ public class band3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //don't forget to apply bundle to public bundleMeshFilter
-      vertices[10].y = bundleMesh.mesh.vertices[2].y + margin;
-      vertices[11].y = bundleMesh.mesh.vertices[2].y+ margin;
-      vertices[16].y = bundleMesh.mesh.vertices[2].y+ margin;
-      vertices[17].y = bundleMesh.mesh.vertices[2].y+ margin;
+      int[] top = {4, 5, 19, 18, 17, 16, 11, 10};
+      for(var i = 0; i < top.Length; i++){
+        vertices[top[i]].y = bundleMesh.mesh.vertices[2].y + margin;
+      }
 
-      vertices[10].x = bundleMesh.mesh.vertices[2].x+ margin;
-      vertices[11].x = bundleMesh.mesh.vertices[2].x+ margin;
-      vertices[16].x = bundleMesh.mesh.vertices[2].x+ margin;
-      vertices[17].x = bundleMesh.mesh.vertices[2].x+ margin;
+      int[] topRight = {16, 17, 10, 11};
+      for(var i = 0; i < topRight.Length; i++){
+        vertices[topRight[i]].x = bundleMesh.mesh.vertices[2].x + margin;
+      }
+
+      int[] topLeft = {18, 19, 5, 4};
+      for(var i = 0; i < topLeft.Length; i++){
+        vertices[topLeft[i]].x = bundleMesh.mesh.vertices[6].x + margin;
+      }
 
       bandMesh.mesh.vertices = vertices;
     }
